@@ -1,0 +1,42 @@
+{
+  "name": "vue-ref2reactive",
+  "description": "vue ref value object to reactive",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "hcg1023 <2293885211@qq.com>",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "/dist/src/main.d.ts",
+  "exports": {
+	"import": "./dist/esm/index.js",
+	"require": "./dist/cjs/index.js",
+	"types": "./dist/src/main.d.ts"
+  },
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/hcg1023/vue-ref2reactive"
+  },
+  "bugs": "https://github.com/hcg1023/vue-ref2reactive/issues",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+	"vue": "^3.0.0",
+	"vite": "^2.8.0",
+    "vite-plugin-dts": "^0.9.10",
+    "vitest": "^0.6.1",
+    "vue-demi": "^0.12.2"
+  },
+  "peerDependencies": {
+	"@vue/composition-api": "^1.0.0-rc.1",
+	"vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+	"@vue/composition-api": {
+	  "optional": true
+	}
+  }
+}
