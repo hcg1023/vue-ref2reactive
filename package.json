@@ -38,5 +38,14 @@
 	"@vue/composition-api": {
 	  "optional": true
 	}
-  }
+  },
+  "files": [
+	"dist"
+  ],
+  "keywords": [
+	"vue",
+	"vuejs",
+	"vue3",
+	"composition-api"
+  ]
 }
