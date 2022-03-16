@@ -1,53 +1,62 @@
 {
   "name": "vue-ref2reactive",
   "description": "vue ref value object to reactive",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "vitest run",
+    "preview": "vite preview",
+    "clean": "shx rm -rf dist/",
+    "build_types": "tsc -b",
+    "build_esm": "swc -C module.type=es6 -d dist/esm src",
+    "build_cjs": "swc -C module.type=commonjs -d dist/cjs src",
+	"build:swc": "run-p build_types build_esm build_cjs",
+	"build": "run-s test clean build:swc"
   },
   "author": "hcg1023 <2293885211@qq.com>",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/main.js",
+  "module": "dist/esm/main.js",
   "types": "dist/src/main.d.ts",
   "exports": {
-	"import": "./dist/esm/index.js",
-	"require": "./dist/cjs/index.js",
-	"types": "./dist/src/main.d.ts"
+    "import": "./dist/esm/main.js",
+    "require": "./dist/cjs/main.js",
+    "types": "./dist/src/main.d.ts"
   },
   "repository": {
-	"type": "git",
-	"url": "https://github.com/hcg1023/vue-ref2reactive"
+    "type": "git",
+    "url": "https://github.com/hcg1023/vue-ref2reactive"
   },
   "bugs": "https://github.com/hcg1023/vue-ref2reactive/issues",
   "license": "MIT",
   "dependencies": {
-	"vue-demi": "^0.12.2"
+    "vue-demi": "^0.12.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4",
+    "swc": "^1.0.11",
     "typescript": "^4.5.4",
-	"vue": "^3.0.0",
-	"vite": "^2.8.0",
+    "vite": "^2.8.0",
     "vite-plugin-dts": "^0.9.10",
-    "vitest": "^0.6.1"
+    "vitest": "^0.6.1",
+    "vue": "^3.0.0"
   },
   "peerDependencies": {
-	"@vue/composition-api": "^1.0.0-rc.1",
-	"vue": "^2.0.0 || >=3.0.0"
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
   },
   "peerDependenciesMeta": {
-	"@vue/composition-api": {
-	  "optional": true
-	}
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "files": [
-	"dist"
+    "dist"
   ],
   "keywords": [
-	"vue",
-	"vuejs",
-	"vue3",
-	"composition-api"
+    "vue",
+    "vuejs",
+    "vue3",
+    "composition-api"
   ]
 }
