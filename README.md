@@ -1,5 +1,12 @@
 # vue-ref2reactive
 
+## Using
+```
+npm install vue-ref2reactive
+yarn add vue-ref2reactive
+pnpm install vue-ref2reactive
+```
+
 ## Problem solved
 
 ```ts
@@ -19,7 +26,7 @@ objRef.value = {name: 'xxx', age: 13}
 
 
 ## Example
-### One
+### toRefReactive
 ```ts
 import { ref } from 'vue'
 import { toRefReactive } from "vue-ref2reactive";
@@ -43,7 +50,7 @@ objRef.value.sex = 'girl'
 objRef.value = { name: 'l', age: 16, sex: 'girl' }
 sex.value // girl
 ```
-### Two
+### toRefsReactive
 
 ```ts
 import { ref, toRefs } from 'vue'
@@ -71,7 +78,7 @@ name.value // 'new'
 age.value // 18
 sex.value // 'boy'
 ```
-### Three
+### toRefsValue
 ```ts
 import { ref } from 'vue'
 import { toRefsValue } from "vue-ref2reactive";
